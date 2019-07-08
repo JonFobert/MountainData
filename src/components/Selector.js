@@ -3,38 +3,38 @@ import React from 'react'
 class Selector extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {xAxisValue: '', yAxisValue: ''}
     }
 
-    handleXAxisSelected = e => {
-        this.setState({xAxisValue: e.target.value})
+    handleXAxisSelected = (e) => {
+        this.props.handleXAxisSelected(e)
     }
 
-    handleYAxisSelected = e => {
-        this.setState({yAxisValue: e.target.value})
+    handleYAxisSelected = (e) => {
+        this.props.handleYAxisSelected(e)
     }
+
 
     render() {
         //Disabled settings for dropdown menus
         let verticalXDisabled = false;
         let priceXDisabled = false;
         let timeXDisabled = false;
-        if(this.state.yAxisValue === 'vertical') {
+        if(this.props.yAxisValue === 'vertical') {
             verticalXDisabled = true;
-        } else if (this.state.yAxisValue === 'price') {
+        } else if (this.props.yAxisValue === 'price') {
             priceXDisabled = true;
-        } else if (this.state.yAxisValue === 'time') {
+        } else if (this.props.yAxisValue === 'time') {
             timeXDisabled = true;
         }
 
         let verticalYDisabled = false;
         let priceYDisabled = false;
         let timeYDisabled = false;
-        if(this.state.xAxisValue === 'vertical') {
+        if(this.props.xAxisValue === 'vertical') {
             verticalYDisabled = true;
-        } else if (this.state.xAxisValue === 'price') {
+        } else if (this.props.xAxisValue === 'price') {
             priceYDisabled = true;
-        } else if (this.state.xAxisValue === 'time') {
+        } else if (this.props.xAxisValue === 'time') {
             timeYDisabled = true;
         }
         return(
