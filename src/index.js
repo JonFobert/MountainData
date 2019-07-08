@@ -23,7 +23,7 @@ class App extends React.Component {
         let graph;
         if(this.state.xAxisValue && this.state.yAxisValue) {
             graph = <Graph xAxisValue = {this.state.xAxisValue}
-                    yAxisValue = {this.state.yAxisValue} />
+                           yAxisValue = {this.state.yAxisValue} />
         }
 
         return(
