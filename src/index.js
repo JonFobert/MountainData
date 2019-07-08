@@ -18,8 +18,14 @@ class App extends React.Component {
     handleYAxisSelected = (e) => {
         this.setState({yAxisValue: e.target.value})
     }
-    
+
     render() {
+        let graph;
+        if(this.state.xAxisValue && this.state.yAxisValue) {
+            graph = <Graph xAxisValue = {this.state.xAxisValue}
+                    yAxisValue = {this.state.yAxisValue} />
+        }
+
         return(
             <div>
                 <Selector 
@@ -28,9 +34,7 @@ class App extends React.Component {
                     handleXAxisSelected = {this.handleXAxisSelected}
                     handleYAxisSelected = {this.handleYAxisSelected} 
                 />
-                <Graph xAxisValue = {this.state.xAxisValue}
-                       yAxisValue = {this.state.yAxisValue}
-                />
+                {graph}
             </div>
         )
     }
