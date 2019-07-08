@@ -17,6 +17,11 @@ class Graph extends React.Component {
     }
 
     render() {
+        let mountainData = MountainsData.map((mountain) => {
+            return {x: mountain.time,
+                    y: mountain.vertical,
+                    size: mountain.price}
+        })
         const data = [
             {x: 1, y: 10, size: 30},
             {x: 1.7, y: 12, size: 10},
@@ -37,7 +42,7 @@ class Graph extends React.Component {
                             strokeWidth={2}
                             opacity="0.8"
                             sizeRange={[5,15]}
-                            data ={data} />
+                            data ={mountainData} />
                     </XYPlot>
                 </div>
             </div>

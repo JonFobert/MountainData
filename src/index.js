@@ -28,7 +28,9 @@ class App extends React.Component {
                     handleXAxisSelected = {this.handleXAxisSelected}
                     handleYAxisSelected = {this.handleYAxisSelected} 
                 />
-                <Graph />
+                <Graph xAxisValue = {this.state.xAxisValue}
+                       yAxisValue = {this.state.yAxisValue}
+                />
             </div>
         )
     }
