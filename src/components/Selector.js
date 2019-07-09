@@ -38,7 +38,7 @@ class Selector extends React.Component {
             timeYDisabled = true;
         }
         return(
-         <form> Graph: 
+         <form className = "selector"> Show me 
              <select className = "yAxis" name="Y-Axis" onChange={this.handleYAxisSelected}>
                  <option value = "yAxis" >---Y Axis</option>
                  <option value = "vertical" disabled={verticalYDisabled}>Vertical Feet</option>

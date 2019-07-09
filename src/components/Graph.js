@@ -40,7 +40,7 @@ class Graph extends React.Component {
 
     formatLabelTitle = (label) => {
         if (label === 'price') {
-            return 'Price';
+            return 'Price ($)';
         } else if (label === 'vertical') {
             return 'Vertical Feet';
         } else if (label === 'time') {
@@ -48,42 +48,56 @@ class Graph extends React.Component {
         }
     };
 
+    calculateColor = (state) => {
+        if (state === 'VT') {
+            return '#24492D';
+        } else if (state === 'NH') {
+            return '#2F2504';
+        } else if (state === 'MA') {
+            return '#5B99E5'
+        } else if (state === 'ME') {
+            return '#565656'
+        }
+    };
+    
+
     render() {
 
         const x = this.props.xAxisValue;
         const y = this.props.yAxisValue;
         const other = this.calculateUnusedSelection(x, y)
+        const calculateColor = this.calculateColor;
         let mountainData = MountainsData.map((mountain) => {
             return {x: mountain[x],
                     y: mountain[y],
                     size: mountain[other],
-                    name: mountain.name
+                    name: mountain.name,
+                    color: calculateColor(mountain.statename)
                     }
         })
         return(
-            <div>
-                <div className="graph">
-                    <XYPlot height={600} width = {800} onMouseLeave={this.onMouseLeave}>
-                        <VerticalGridLines />
-                        <HorizontalGridLines />
-                        <XAxis title={this.formatLabelTitle(x)} />
-                        <YAxis title={this.formatLabelTitle(y)} />
-                        <MarkSeries onNearestXY={this.onNearestXY}
-                            className="mark-series-example"
-                            strokeWidth={2}
-                            opacity="0.8"
-                            sizeRange={[5,15]}
-                            data ={mountainData}
-                        />
-                        <Hint value = {this.state.hintValue}>
-                            <div style = {{background: 'gray'}}>
-                                <h3>{this.state.hintValue.name}</h3>
-                                    <p>{this.formatLabelTitle(x)}: {this.state.hintValue.x}</p>
-                                    <p>{this.formatLabelTitle(y)}: {this.state.hintValue.y}</p>
-                            </div>
-                        </Hint>
-                    </XYPlot>
-                </div>
+            <div className="graph">
+                <XYPlot height={500} width = {700} margin = {{left: 80, right: 30, top: 30, bottom: 30}} colorType ="literal" onMouseLeave={this.onMouseLeave}>
+                    <VerticalGridLines />
+                    <HorizontalGridLines />
+                    <XAxis title={this.formatLabelTitle(x)} style={{fontSize: 14}}/>
+                    <YAxis title={this.formatLabelTitle(y)} style={{fontSize: 14}}/>
+                    <MarkSeries onNearestXY={this.onNearestXY}
+                        className="mark-series-example"
+                        strokeWidth={2}
+                        opacity="0.8"
+                        sizeRange={[5,25]}
+                        data ={mountainData}
+                        
+                    />
+                    <Hint className = "hint" value = {this.state.hintValue}>
+                        <div>
+                            <h3>{this.state.hintValue.name}</h3>
+                                <p>{this.formatLabelTitle(x)}: {this.state.hintValue.x}</p>
+                                <p>{this.formatLabelTitle(y)}: {this.state.hintValue.y}</p>
+                        </div>
+                    </Hint>
+                </XYPlot>
             </div>
         )    
     }
