@@ -93,11 +93,36 @@ class Graph extends React.Component {
                     <Hint className = "hint" value = {this.state.hintValue}>
                         <div>
                             <h3>{this.state.hintValue.name}</h3>
-                                <p>{this.formatLabelTitle(x)}: {this.state.hintValue.x}</p>
-                                <p>{this.formatLabelTitle(y)}: {this.state.hintValue.y}</p>
+                                <p>{this.formatLabelTitle(other)}: {this.state.hintValue.size}</p>
                         </div>
                     </Hint>
                 </XYPlot>
+                <div className = "legend">
+                    <div>
+                        <span>Vermont:</span>
+                        <svg width="36" height="36">
+                                <circle cx = "18" cy ="15" r = "10" fill= "#4f6d56" ></circle>
+                            </svg>
+                    </div>
+                    <div>
+                        <span>Massachusetts:</span>
+                        <svg width="36" height="36">
+                                <circle cx = "18" cy ="15" r = "10" fill= "#7badea" ></circle>
+                            </svg>
+                    </div>
+                    <div>
+                        <span>New Hampshire:</span>
+                        <svg width="36" height="36">
+                                <circle cx = "18" cy ="15" r = "10" fill= "#585036" ></circle>
+                            </svg>
+                    </div>
+                    <div>
+                        <span>Maine:</span>
+                        <svg width="36" height="36">
+                                <circle cx = "18" cy ="15" r = "10" fill= "#777777" ></circle>
+                            </svg>
+                    </div>
+                </div>
             </div>
         )    
     }
