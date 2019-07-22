@@ -75,6 +75,17 @@ class Graph extends React.Component {
                     color: calculateColor(mountain.statename)
                     }
         })
+
+        let hint;
+        if (this.state.hintValue.name) {
+            hint = <Hint className = "hint" value = {this.state.hintValue}>
+                        <div>
+                            <h3>{this.state.hintValue.name}</h3>
+                                <p>{this.formatLabelTitle(other)}: {this.state.hintValue.size}</p>
+                        </div>
+                    </Hint>
+        }
+
         return(
             <div className="graph">
                 <XYPlot height={500} width = {700} margin = {{left: 80, right: 30, top: 30, bottom: 30}} colorType ="literal" onMouseLeave={this.onMouseLeave}>
@@ -88,14 +99,9 @@ class Graph extends React.Component {
                         opacity="0.8"
                         sizeRange={[5,25]}
                         data ={mountainData}
-                        
                     />
-                    <Hint className = "hint" value = {this.state.hintValue}>
-                        <div>
-                            <h3>{this.state.hintValue.name}</h3>
-                                <p>{this.formatLabelTitle(other)}: {this.state.hintValue.size}</p>
-                        </div>
-                    </Hint>
+                    {hint}
+                    
                 </XYPlot>
                 <div className = "legend">
                     <div>
