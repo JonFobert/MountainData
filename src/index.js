@@ -40,7 +40,7 @@ class App extends React.Component {
                     handleYAxisSelected = {this.handleYAxisSelected} 
                 />
                 {graph}
-            </div>
+            </div> 
         )
     }
 }

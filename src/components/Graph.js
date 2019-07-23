@@ -105,28 +105,28 @@ class Graph extends React.Component {
                 </XYPlot>
                 <div className = "legend">
                     <div>
-                        <span>Vermont:</span>
                         <svg width="36" height="36">
                                 <circle cx = "18" cy ="15" r = "10" fill= "#4f6d56" ></circle>
                             </svg>
+                        <span>Vermont</span>
                     </div>
                     <div>
-                        <span>Massachusetts:</span>
                         <svg width="36" height="36">
                                 <circle cx = "18" cy ="15" r = "10" fill= "#7badea" ></circle>
                             </svg>
+                        <span>Massachusetts</span>
                     </div>
                     <div>
-                        <span>New Hampshire:</span>
                         <svg width="36" height="36">
                                 <circle cx = "18" cy ="15" r = "10" fill= "#585036" ></circle>
                             </svg>
+                        <span>New Hampshire</span>
                     </div>
                     <div>
-                        <span>Maine:</span>
                         <svg width="36" height="36">
                                 <circle cx = "18" cy ="15" r = "10" fill= "#777777" ></circle>
                             </svg>
+                        <span>Maine</span>
                     </div>
                 </div>
             </div>
