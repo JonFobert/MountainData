@@ -40,6 +40,26 @@ code {
   font-size: 18px
 }
 
+.selectorFade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.selectorFade-appear.selectorFade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+.graphFade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.graphFade-appear.graphFade-appear-active {
+  opacity: 1;
+  transition: opacity 800ms linear;
+}
+
 .graph {
   display: grid;
   grid-template-columns: 700px 200px

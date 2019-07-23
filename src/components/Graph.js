@@ -87,49 +87,49 @@ class Graph extends React.Component {
         }
 
         return(
-            <div className="graph">
-                <XYPlot height={500} width = {700} margin = {{left: 80, right: 30, top: 30, bottom: 30}} colorType ="literal" onMouseLeave={this.onMouseLeave}>
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
-                    <XAxis title={this.formatLabelTitle(x)} style={{fontSize: 14}}/>
-                    <YAxis title={this.formatLabelTitle(y)} style={{fontSize: 14}}/>
-                    <MarkSeries onNearestXY={this.onNearestXY}
-                        className="mark-series-example"
-                        strokeWidth={2}
-                        opacity="0.8"
-                        sizeRange={[5,25]}
-                        data ={mountainData}
-                    />
-                    {hint}
-                    
-                </XYPlot>
-                <div className = "legend">
-                    <div>
-                        <svg width="36" height="36">
-                                <circle cx = "18" cy ="15" r = "10" fill= "#4f6d56" ></circle>
-                            </svg>
-                        <span>Vermont</span>
-                    </div>
-                    <div>
-                        <svg width="36" height="36">
-                                <circle cx = "18" cy ="15" r = "10" fill= "#7badea" ></circle>
-                            </svg>
-                        <span>Massachusetts</span>
-                    </div>
-                    <div>
-                        <svg width="36" height="36">
-                                <circle cx = "18" cy ="15" r = "10" fill= "#585036" ></circle>
-                            </svg>
-                        <span>New Hampshire</span>
-                    </div>
-                    <div>
-                        <svg width="36" height="36">
-                                <circle cx = "18" cy ="15" r = "10" fill= "#777777" ></circle>
-                            </svg>
-                        <span>Maine</span>
+                <div className="graph">
+                    <XYPlot height={500} width = {700} margin = {{left: 80, right: 30, top: 30, bottom: 30}} colorType ="literal" onMouseLeave={this.onMouseLeave}>
+                        <VerticalGridLines />
+                        <HorizontalGridLines />
+                        <XAxis title={this.formatLabelTitle(x)} style={{fontSize: 14}}/>
+                        <YAxis title={this.formatLabelTitle(y)} style={{fontSize: 14}}/>
+                        <MarkSeries onNearestXY={this.onNearestXY}
+                            className="mark-series-example"
+                            strokeWidth={2}
+                            opacity="0.8"
+                            sizeRange={[5,25]}
+                            data ={mountainData}
+                        />
+                        {hint}
+                        
+                    </XYPlot>
+                    <div className = "legend">
+                        <div>
+                            <svg width="36" height="36">
+                                    <circle cx = "18" cy ="15" r = "10" fill= "#4f6d56" ></circle>
+                                </svg>
+                            <span>Vermont</span>
+                        </div>
+                        <div>
+                            <svg width="36" height="36">
+                                    <circle cx = "18" cy ="15" r = "10" fill= "#7badea" ></circle>
+                                </svg>
+                            <span>Massachusetts</span>
+                        </div>
+                        <div>
+                            <svg width="36" height="36">
+                                    <circle cx = "18" cy ="15" r = "10" fill= "#585036" ></circle>
+                                </svg>
+                            <span>New Hampshire</span>
+                        </div>
+                        <div>
+                            <svg width="36" height="36">
+                                    <circle cx = "18" cy ="15" r = "10" fill= "#777777" ></circle>
+                                </svg>
+                            <span>Maine</span>
+                        </div>
                     </div>
                 </div>
-            </div>
         )    
     }
 }
