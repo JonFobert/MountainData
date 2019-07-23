@@ -1,3 +1,9 @@
+# Mountain Data
+This project is a react app that creates a graph of New England ski areas
+
+It uses React.js and Uber's react-vis.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
