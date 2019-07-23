@@ -60,6 +60,16 @@ code {
   transition: opacity 800ms linear;
 }
 
+.graphFade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.graphFade-enter.graphFade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
 .graph {
   display: grid;
   grid-template-columns: 700px 200px

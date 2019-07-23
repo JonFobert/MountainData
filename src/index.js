@@ -31,9 +31,11 @@ class App extends React.Component {
             <CSSTransition
                 in={true}
                 appear={true}
-                timeout = {800}
+                timeout = {{
+                    appear: 800,
+                    enter: 300
+                }}
                 classNames="graphFade">
-
                <Graph xAxisValue = {this.state.xAxisValue}
                       yAxisValue = {this.state.yAxisValue} />
             </CSSTransition>
