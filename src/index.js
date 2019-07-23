@@ -46,7 +46,7 @@ class App extends React.Component {
                     in={true}
                     appear={true}
                     timeout = {300}
-                    classNames="fade">
+                    classNames="selectorFade">
                     <Selector
                         xAxisValue = {this.state.xAxisValue}
                         yAxisValue = {this.state.yAxisValue}
