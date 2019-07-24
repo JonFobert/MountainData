@@ -56,8 +56,12 @@ class App extends React.Component {
                     timeout = {300}
                     classNames="selectorFade">
                     <Selector
-                        xAxisValue = {this.state.xAxisValue}
-                        yAxisValue = {this.state.yAxisValue}
+                        dropdownItems = {DROPDOWNITEMS}
+                        xAxisValue = 'textX'
+                        yAxisValue = 'testY'
+    
+                        //xAxisValue = {this.state.xAxisValue}
+                        //yAxisValue = {this.state.yAxisValue}
                         handleXAxisSelected = {this.handleXAxisSelected}
                         handleYAxisSelected = {this.handleYAxisSelected} 
                     />
@@ -68,5 +72,11 @@ class App extends React.Component {
         )
     }
 }
+
+const DROPDOWNITEMS = [ 
+    {id: 0, name: 'Vertical'},
+    {id: 1, name: 'Price'},
+    {id: 2, name: 'Time'}
+]
 
 ReactDOM.render(<App />, document.getElementById('root'));

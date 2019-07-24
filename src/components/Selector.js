@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomDropdown from './components/CustomDropdown.js'
+import CustomDropdown from './CustomDropdown.js'
 
 class Selector extends React.Component {
     constructor(props) {
@@ -17,6 +17,7 @@ class Selector extends React.Component {
 
     render() {
         //Disabled settings for dropdown menus
+        /*
         let verticalXDisabled = false;
         let priceXDisabled = false;
         let timeXDisabled = false;
@@ -37,18 +38,28 @@ class Selector extends React.Component {
             priceYDisabled = true;
         } else if (this.props.xAxisValue === 'time') {
             timeYDisabled = true;
-        }
+        }*/
         return(
         <p>
         Show me
-        <CustomDropdown>
+        <CustomDropdown
+            label = {'Y'}
+            items = {this.props.dropdownItems}
+            otherSelectedItem = {this.props.xAxisValue}
+            currentSelectedItem = {this.props.yAxisValue}
+        >
         </CustomDropdown>
         versus
-        <CustomDropdown>
+        <CustomDropdown
+            label = {'X'}
+            items = {this.props.dropdownItems}
+            otherSelectedItem = {this.props.yAxisValue}
+            currentSelectedItem = {this.props.xAxisValue}
+        >
         </CustomDropdown>
         </p>
         
-         <form className = "selector"> Show me 
+         /*<form className = "selector"> Show me 
              <select className = "yAxis" name="Y-Axis" onChange={this.handleYAxisSelected}>
                  <option value = "yAxis" >---Y Axis</option>
                  <option value = "vertical" disabled={verticalYDisabled}>Vertical Feet</option>
@@ -62,7 +73,7 @@ class Selector extends React.Component {
                 <option value = "price" disabled ={priceXDisabled}>Price</option>
                 <option value = "time" disabled ={timeXDisabled}>Travel Time</option>
              </select>
-         </form>
+         </form>*/
         )
     }
 }
