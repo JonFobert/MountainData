@@ -32,8 +32,7 @@ class App extends React.Component {
         if(this.state.xAxisValue && this.state.yAxisValue) {
             graph = 
             <CSSTransition
-                //if the selection for the x or y axis changed recently than animate the graph appearing or enterin
-
+                //if the selection for the x or y axis changed recently than animate the graph appearing or entering
                 in={this.state.selectionChanged}
                 appear={true}
                 timeout = {{

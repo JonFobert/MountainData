@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomDropdown from './components/CustomDropdown.js'
 
 class Selector extends React.Component {
     constructor(props) {
@@ -38,6 +39,15 @@ class Selector extends React.Component {
             timeYDisabled = true;
         }
         return(
+        <p>
+        Show me
+        <CustomDropdown>
+        </CustomDropdown>
+        versus
+        <CustomDropdown>
+        </CustomDropdown>
+        </p>
+        
          <form className = "selector"> Show me 
              <select className = "yAxis" name="Y-Axis" onChange={this.handleYAxisSelected}>
                  <option value = "yAxis" >---Y Axis</option>
