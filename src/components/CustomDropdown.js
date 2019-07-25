@@ -10,9 +10,13 @@ class CustomDropdownItem extends React.Component {
     }
 
     render() {
-        return(
-            <li className="dropdownItem" onClick = {this.onItemClick}>{this.props.item.name}</li>
-        )
+        let item
+        if (this.props.item.name === this.props.currentSelectedItem.name) {
+            item = <li className="dropdownItem selectedDropdownItem" onClick = {this.onItemClick}>{this.props.item.name}</li>
+        } else {
+            item = <li className="dropdownItem" onClick = {this.onItemClick}>{this.props.item.name}</li>
+        }
+        return item;
     }
 }
 
@@ -31,12 +35,11 @@ class CustomDropdownItems extends React.Component {
 
     render() {
         let dropdownItems;
-        let itemsDisplay = this.props.items
         if(this.props.dropdownActivated) {
             dropdownItems = 
                 <ul className="dropdownItems">
-                    {itemsDisplay.map((item) => {
-                        return <CustomDropdownItem key = {item.id.toString()} item = {item} handleItemClick = {this.handleItemClick}></CustomDropdownItem>
+                    {this.props.items.map((item) => {
+                        return <CustomDropdownItem key = {item.id.toString()} currentSelectedItem = {this.props.currentSelectedItem} item = {item} handleItemClick = {this.handleItemClick}></CustomDropdownItem>
                     })}
                 </ul>
         } else {
@@ -60,7 +63,7 @@ class CustomDropdownHeader extends React.Component {
         let dropdownHeading;
         if (Object.keys(this.props.currentSelectedItem).length == 0) {
             dropdownHeading = 
-                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>Sup</h1>
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.label + ' Axis'}</h1>
         } else {
             dropdownHeading = 
                 <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem.name}</h1>
@@ -86,6 +89,9 @@ class CustomDropdown extends React.Component {
 
     handleItemClick = (item) => {
         this.props.handleItemClick(item)
+        this.setState(state => ({
+            dropdownActivated: !state.dropdownActivated
+        }))
     }
 
     render() {
