@@ -40,9 +40,8 @@ class Selector extends React.Component {
             timeYDisabled = true;
         }*/
         return(
-        <p>
-        Show me
-        <CustomDropdown
+        <div className = "selectorDiv">
+        Show me<CustomDropdown
             label = {'Y'}
             items = {this.props.dropdownItems}
             otherSelectedItem = {this.props.xAxisValue}
@@ -57,7 +56,7 @@ class Selector extends React.Component {
             currentSelectedItem = {this.props.xAxisValue}
         >
         </CustomDropdown>
-        </p>
+        </div>
         
          /*<form className = "selector"> Show me 
              <select className = "yAxis" name="Y-Axis" onChange={this.handleYAxisSelected}>
