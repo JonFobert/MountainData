@@ -57,8 +57,8 @@ class App extends React.Component {
                     classNames="selectorFade">
                     <Selector
                         dropdownItems = {DROPDOWNITEMS}
-                        xAxisValue = 'X-Axis'
-                        yAxisValue = 'Y-Axis'
+                        xAxisValue = {this.state.xAxisValue}
+                        yAxisValue = {this.state.yAxisValue}
                         handleItemClickX = {this.handleItemClickX}
                         handleItemClickY = {this.handleItemClickY}
                         

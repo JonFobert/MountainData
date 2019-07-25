@@ -55,12 +55,19 @@ class CustomDropdownHeader extends React.Component {
     }
 
     render() {
-        return(
-            <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem}</h1>
-
-        );
+        let dropdownHeading;
+        if (this.props.currentSelectedItem==='') {
+            dropdownHeading = 
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>Sup</h1>
+        } else {
+            dropdownHeading = 
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem}</h1>
+        }
+        return dropdownHeading;
     }
 }
+
+
 
 class CustomDropdown extends React.Component {
     constructor(props) {
@@ -85,6 +92,7 @@ class CustomDropdown extends React.Component {
                 <CustomDropdownHeader
                     currentSelectedItem={this.props.currentSelectedItem}
                     onHeaderClick = {this.onHeaderClick}
+                    label = {this.props.label}
                 /> 
                 
                 <CustomDropdownItems
