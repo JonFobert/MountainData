@@ -5,9 +5,13 @@ class CustomDropdownItem extends React.Component {
         super(props)
     }
 
+    onItemClick = () => {
+        this.props.handleItemClick(this.props.item)
+    }
+
     render() {
         return(
-            <li className="dropdownItem">{this.props.item.name}</li>
+            <li className="dropdownItem" onClick = {this.onItemClick}>{this.props.item.name}</li>
         )
     }
 }
@@ -17,13 +21,18 @@ class CustomDropdownItems extends React.Component {
         super(props)
     }   
 
+    handleItemClick = (item) => {
+        this.props.handleItemClick(item)
+    }
+
+
     render() {
         let dropdownItems;
         if(this.props.dropdownActivated) {
             dropdownItems = 
                 <ul className="dropdownItems">
                     {this.props.items.map((item) => {
-                        return <CustomDropdownItem key = {item.id.toString()} item = {item}></CustomDropdownItem>
+                        return <CustomDropdownItem key = {item.id.toString()} item = {item} handleItemClick = {this.handleItemClick}></CustomDropdownItem>
                     })}
                 </ul>
         } else {
@@ -56,13 +65,18 @@ class CustomDropdownHeader extends React.Component {
 class CustomDropdown extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {dropdownActivated: false}
+        this.state = {dropdownActivated: false, test: true}
     }   
 
     onHeaderClick = () => {
         this.setState(state => ({
             dropdownActivated: !state.dropdownActivated
         }))
+    }
+
+
+    handleItemClick = (item) => {
+        this.props.handleItemClick(item)
     }
 
     render() {
@@ -74,9 +88,9 @@ class CustomDropdown extends React.Component {
                 /> 
                 
                 <CustomDropdownItems
-                    label = {this.props.label}
                     items = {this.props.items}
                     dropdownActivated = {this.state.dropdownActivated}
+                    handleItemClick = {this.handleItemClick}
                 />
             </div>
         )

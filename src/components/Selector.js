@@ -6,39 +6,16 @@ class Selector extends React.Component {
         super(props)
     }
 
-    handleXAxisSelected = (e) => {
-        this.props.handleXAxisSelected(e)
+    handleItemClickX = (item) => {
+        this.props.handleItemClickX(item)
     }
 
-    handleYAxisSelected = (e) => {
-        this.props.handleYAxisSelected(e)
+    handleItemClickY = (item) => {
+        this.props.handleItemClickY(item)
     }
 
 
     render() {
-        //Disabled settings for dropdown menus
-        /*
-        let verticalXDisabled = false;
-        let priceXDisabled = false;
-        let timeXDisabled = false;
-        if(this.props.yAxisValue === 'vertical') {
-            verticalXDisabled = true;
-        } else if (this.props.yAxisValue === 'price') {
-            priceXDisabled = true;
-        } else if (this.props.yAxisValue === 'time') {
-            timeXDisabled = true;
-        }
-
-        let verticalYDisabled = false;
-        let priceYDisabled = false;
-        let timeYDisabled = false;
-        if(this.props.xAxisValue === 'vertical') {
-            verticalYDisabled = true;
-        } else if (this.props.xAxisValue === 'price') {
-            priceYDisabled = true;
-        } else if (this.props.xAxisValue === 'time') {
-            timeYDisabled = true;
-        }*/
         return(
         <div className = "selectorDiv">
         Show me<CustomDropdown
@@ -46,6 +23,7 @@ class Selector extends React.Component {
             items = {this.props.dropdownItems}
             otherSelectedItem = {this.props.xAxisValue}
             currentSelectedItem = {this.props.yAxisValue}
+            handleItemClick = {this.handleItemClickY}
         >
         </CustomDropdown>
         versus
@@ -54,6 +32,7 @@ class Selector extends React.Component {
             items = {this.props.dropdownItems}
             otherSelectedItem = {this.props.yAxisValue}
             currentSelectedItem = {this.props.xAxisValue}
+            handleItemClick = {this.handleItemClickX}
         >
         </CustomDropdown>
         </div>

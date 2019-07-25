@@ -16,13 +16,13 @@ class App extends React.Component {
         this.state = {xAxisValue: '', yAxisValue: '', selectionChanged: false}
     }
 
-    handleXAxisSelected = (e) => {
-        this.setState({xAxisValue: e.target.value})
+    handleItemClickX = (item) => {
+        this.setState({xAxisValue: item.name})
         this.setState({selectionChanged: true})
     }
 
-    handleYAxisSelected = (e) => {
-        this.setState({yAxisValue: e.target.value})
+    handleItemClickY = (item) => {
+        this.setState({yAxisValue: item.name})
         this.setState({selectionChanged: true})
     }
 
@@ -57,13 +57,15 @@ class App extends React.Component {
                     classNames="selectorFade">
                     <Selector
                         dropdownItems = {DROPDOWNITEMS}
-                        xAxisValue = 'textX'
-                        yAxisValue = 'testY'
-    
+                        xAxisValue = 'X-Axis'
+                        yAxisValue = 'Y-Axis'
+                        handleItemClickX = {this.handleItemClickX}
+                        handleItemClickY = {this.handleItemClickY}
+                        
                         //xAxisValue = {this.state.xAxisValue}
                         //yAxisValue = {this.state.yAxisValue}
-                        handleXAxisSelected = {this.handleXAxisSelected}
-                        handleYAxisSelected = {this.handleYAxisSelected} 
+                        //handleXAxisSelected = {this.handleXAxisSelected}
+                        //handleYAxisSelected = {this.handleYAxisSelected} 
                     />
                 </CSSTransition>
                 
