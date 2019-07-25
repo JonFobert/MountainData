@@ -26,7 +26,7 @@ class CustomDropdownItems extends React.Component {
     }
 
     filterItems = (items) => {
-        //let index = items.indexOf(this.props.currentSelectedItem)
+        
     }
 
     render() {
