@@ -76,9 +76,9 @@ class App extends React.Component {
 }
 
 const DROPDOWNITEMS = [ 
-    {id: 0, name: 'Vertical'},
-    {id: 1, name: 'Price'},
-    {id: 2, name: 'Time'}
+    {id: 0, name: 'vertical'},
+    {id: 1, name: 'price'},
+    {id: 2, name: 'time'}
 ]
 
 ReactDOM.render(<App />, document.getElementById('root'));
