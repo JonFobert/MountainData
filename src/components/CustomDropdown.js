@@ -25,21 +25,23 @@ class CustomDropdownItems extends React.Component {
         this.props.handleItemClick(item)
     }
 
+    filterItems = (items) => {
+        //let index = items.indexOf(this.props.currentSelectedItem)
+    }
 
     render() {
         let dropdownItems;
+        let itemsDisplay = this.props.items
         if(this.props.dropdownActivated) {
             dropdownItems = 
                 <ul className="dropdownItems">
-                    {this.props.items.map((item) => {
+                    {itemsDisplay.map((item) => {
                         return <CustomDropdownItem key = {item.id.toString()} item = {item} handleItemClick = {this.handleItemClick}></CustomDropdownItem>
                     })}
                 </ul>
         } else {
             dropdownItems = null
         }
-
-
 
         return dropdownItems
     }
@@ -56,12 +58,12 @@ class CustomDropdownHeader extends React.Component {
 
     render() {
         let dropdownHeading;
-        if (this.props.currentSelectedItem==='') {
+        if (Object.keys(this.props.currentSelectedItem).length == 0) {
             dropdownHeading = 
                 <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>Sup</h1>
         } else {
             dropdownHeading = 
-                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem}</h1>
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem.name}</h1>
         }
         return dropdownHeading;
     }
@@ -99,6 +101,7 @@ class CustomDropdown extends React.Component {
                     items = {this.props.items}
                     dropdownActivated = {this.state.dropdownActivated}
                     handleItemClick = {this.handleItemClick}
+                    currentSelectedItem={this.props.currentSelectedItem}
                 />
             </div>
         )
