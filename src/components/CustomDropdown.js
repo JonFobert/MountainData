@@ -23,23 +23,20 @@ class CustomDropdownItem extends React.Component {
 class CustomDropdownItems extends React.Component {
     constructor(props) {
         super(props)
-    }   
-
-    handleItemClick = (item) => {
-        this.props.handleItemClick(item)
-    }
+    } 
 
     filterItems = (items) => {
-        
+        return items.filter(item => item !== this.props.otherSelectedItem )
     }
 
     render() {
         let dropdownItems;
+        let displayedItems = this.filterItems(this.props.items);
         if(this.props.dropdownActivated) {
             dropdownItems = 
                 <ul className="dropdownItems">
-                    {this.props.items.map((item) => {
-                        return <CustomDropdownItem key = {item.id.toString()} currentSelectedItem = {this.props.currentSelectedItem} item = {item} handleItemClick = {this.handleItemClick}></CustomDropdownItem>
+                    {displayedItems.map((item) => {
+                        return <CustomDropdownItem key = {item.id.toString()} currentSelectedItem = {this.props.currentSelectedItem} item = {item} handleItemClick = {this.props.handleItemClick}></CustomDropdownItem>
                     })}
                 </ul>
         } else {
@@ -108,6 +105,7 @@ class CustomDropdown extends React.Component {
                     dropdownActivated = {this.state.dropdownActivated}
                     handleItemClick = {this.handleItemClick}
                     currentSelectedItem={this.props.currentSelectedItem}
+                    otherSelectedItem = {this.props.otherSelectedItem}
                 />
             </div>
         )
