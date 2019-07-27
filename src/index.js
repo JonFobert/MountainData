@@ -61,11 +61,6 @@ class App extends React.Component {
                         yAxisValue = {this.state.yAxisValue}
                         handleItemClickX = {this.handleItemClickX}
                         handleItemClickY = {this.handleItemClickY}
-                        
-                        //xAxisValue = {this.state.xAxisValue}
-                        //yAxisValue = {this.state.yAxisValue}
-                        //handleXAxisSelected = {this.handleXAxisSelected}
-                        //handleYAxisSelected = {this.handleYAxisSelected} 
                     />
                 </CSSTransition>
                 
@@ -81,4 +76,4 @@ const DROPDOWNITEMS = [
     {id: 2, name: 'time'}
 ]
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
