@@ -58,12 +58,41 @@ class CustomDropdownHeader extends React.Component {
 
     render() {
         let dropdownHeading;
-        if (Object.keys(this.props.currentSelectedItem).length == 0) {
+        if (this.props.dropdownActivated && (Object.keys(this.props.currentSelectedItem).length == 0)) {
+                dropdownHeading = 
+                    <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{
+                        this.props.label + ' Axis'}
+                        <svg height="10" width="20">
+                            <polygon className = "arrow" points="0,7 10,7 5,0" />
+                        </svg>
+                    </h1>
+        }
+        else if (this.props.dropdownActivated) {
             dropdownHeading = 
-                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.label + ' Axis'}</h1>
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>
+                    {this.props.currentSelectedItem.name}
+                    <svg height="10" width="20">
+                        <polygon className = "arrow" points="0,7 10,7 5,0" />
+                    </svg>
+                </h1>
+        }
+        
+        else if (Object.keys(this.props.currentSelectedItem).length == 0) {
+            dropdownHeading = 
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{
+                    this.props.label + ' Axis'}
+                    <svg height="10" width="20">
+                        <polygon className = "arrow" points="0,0 10,0 5,7" />
+                    </svg>
+                </h1>
         } else {
             dropdownHeading = 
-                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>{this.props.currentSelectedItem.name}</h1>
+                <h1 className="dropdownHeading" onClick = {this.onHeaderClick}>
+                    {this.props.currentSelectedItem.name}
+                    <svg height="10" width="20">
+                        <polygon className = "arrow" points="0,0 10,0 5,7" />
+                    </svg>
+                </h1>
         }
         return dropdownHeading;
     }
@@ -98,6 +127,7 @@ class CustomDropdown extends React.Component {
                     currentSelectedItem={this.props.currentSelectedItem}
                     onHeaderClick = {this.onHeaderClick}
                     label = {this.props.label}
+                    dropdownActivated = {this.state.dropdownActivated}
                 /> 
                 
                 <CustomDropdownItems
