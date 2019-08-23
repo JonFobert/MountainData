@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class CustomDropdownItem extends React.Component {
     constructor(props) {
         super(props)
@@ -103,7 +104,7 @@ class CustomDropdownHeader extends React.Component {
 class CustomDropdown extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {dropdownActivated: false, test: true}
+        this.state = {dropdownActivated: false}
     }   
 
     onHeaderClick = () => {

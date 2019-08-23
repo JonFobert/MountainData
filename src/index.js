@@ -49,7 +49,16 @@ class App extends React.Component {
 
         return(
             <div className = "containter">
-                <h1 className = "heading">New England Ski Visualizer</h1>
+                    <div className = "topBar">
+                        <div className = "invisible">A</div>
+                        <h1 classname = "pageTitle">New England Ski Visualizer</h1>
+                        <div class= "githubLink">
+                            <a href = 'https://github.com/JonFobert'>
+                                <img src = './githubLogo.png'></img>
+                            </a>
+                            <a href = 'https://github.com/JonFobert'>/JonFobert</a>
+                        </div>
+                    </div>
                 <CSSTransition
                     in={true}
                     appear={true}
@@ -63,7 +72,6 @@ class App extends React.Component {
                         handleItemClickY = {this.handleItemClickY}
                     />
                 </CSSTransition>
-                
                 {graph}
             </div> 
         )

@@ -17,16 +17,66 @@ code {
   grid-template-columns: auto 800px auto;
 }
 
-.heading {
+.gitHubLink {
   display: flex;
   grid-column: 1 / span 3;
   grid-row: 1 / 2;
   align-items: center;
   justify-content: center;
   margin: 0px 0px 0px 0px;
-  background-color: #333333;
+  background-color: #455a64;
   color: #fff;
 }
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / span 3;
+  grid-row: 1 / 2;
+  margin: 0px 0px 0px 0px;
+  background-color: #455a64;
+  color: #fff;
+  align-items: center;
+}
+
+.invisible {
+  visibility: hidden;
+  width: 172px;
+}
+
+/*.pageTitle 
+  
+}*/
+
+.githubLink {
+  font-weight: bold;
+  width: 167px;
+  padding-right: 5px;
+  display: flex;
+  font-size: 26px;
+  color: white;
+  align-items: center
+}
+
+a:link {
+	text-decoration: none;
+	color: white;
+  }
+  
+  a:visited {
+	text-decoration: none;
+	color: white;
+  }
+  
+  a:hover {
+	text-decoration: none;
+	color: white;
+  }
+  
+  a:active {
+	text-decoration: none;
+	color: white;
+  }
 
 .selector, .graph{
   display: flex;
@@ -63,7 +113,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #607d8b;
+  background-color: #455a64;
   margin: 0;
   padding-left: 5px;
   font-size: 18px;
@@ -81,7 +131,7 @@ code {
 }
 
 .dropdownItem {
-  background-color: #607d8b;
+  background-color: #455a64;
   font-size: 18px;
   margin: 0;
   padding: 0 0 0 5px;
@@ -89,11 +139,11 @@ code {
 }
 
 .dropdownItem:hover, .dropdownHeading:hover, .headingActivated{
-  background-color: #455a64;
+  background-color: #263238;
 }
 
 .selectedDropdownItem {
-  background-color: #455a64;
+  background-color: #263238;
 }
 
 
