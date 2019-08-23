@@ -21,12 +21,10 @@ class Graph extends React.Component {
 
     onNearestXY = (value, {index}) => {
         this.setState({hintValue: value})
-        console.log(value)
     };
 
     onMouseLeave = () => {
         this.setState({hintValue: {}})
-        console.log("Left!")
     };
 
     calculateUnusedSelection = (x, y) => {
