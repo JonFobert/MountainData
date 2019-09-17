@@ -51,7 +51,7 @@ class App extends React.Component {
             <div className = "containter">
                     <div className = "topBar">
                         <div className = "invisible">A</div>
-                        <h1 classname = "pageTitle">New England Ski Visualizer</h1>
+                        <h1 classname = "pageTitle">Mountain Data</h1>
                         <div class= "githubLink">
                             <a href = 'https://github.com/JonFobert'>
                                 <img src = './githubLogo.png'></img>

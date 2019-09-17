@@ -66,7 +66,7 @@ class Graph extends React.Component {
         const other = this.calculateUnusedSelection(x, y)
         const calculateColor = this.calculateColor;
         let mountainData = MountainsData.map((mountain) => {
-            return {x: mountain[x],
+            return {x: mountain[x], 
                     y: mountain[y],
                     size: mountain[other],
                     name: mountain.name,
