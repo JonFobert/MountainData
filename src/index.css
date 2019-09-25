@@ -91,6 +91,8 @@ a:link {
 }
 
 .selectorDiv {
+  font-size: 18px;
+  font-weight: bold;
   display: flex;
   grid-column: 2 / span 1;
   justify-content: center;
